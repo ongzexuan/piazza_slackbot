@@ -1,1 +1,1 @@
-worker: python piazza_bot.py
+release: python piazza_bot.py
