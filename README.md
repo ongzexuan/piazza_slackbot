@@ -11,9 +11,17 @@ Simple slackbot that polls Piazza every minute for new posts and posts their con
 
 ### Deployment
 
-The bot needs to run somewhere. A free tier heroku deployment would suffice.
+The bot needs to run somewhere. A free tier Heroku deployment would suffice.
 
-The required environment variables can be found on in `.env.template`
+1. Create a new app on Heroku. You can do this either via the Heroku CLI or using the web interface. Follow the instructions to create a local Heroku git repo.
+2. The required environment variables can be found on in `.env.template`. Fill in the corresponding fields on the app deployment (this is so that we don't put confidential credentials in the program itself)
+3. Follow the deployment instructions provided by Heroku
+
+The supporting files required for Heroku deployment are provided, you can modify them if you wish. Their functions are roughly listed below:
+
+`Procfile` - specifies to Heroku the type of application and the instruction to run
+`requirements.txt` - packages/dependencies to install
+`runtime.txt` - which version of Python we are using
 
 
 ### Local Deployment
@@ -26,3 +34,9 @@ You can also run the bot on your local machine for testing purposes.
 
 If everything goes well, the bot should print a relatively healthy message every minute
 
+
+## Credits
+
+Inspired by [t-davidson's piazza-slackbot](https://github.com/t-davidson/piazza-slackbot). Modified the handling of env variables, as rewriting the logic for pulling new posts.
+
+https://github.com/t-davidson/piazza-slackbot/blob/master/slackbot.py
